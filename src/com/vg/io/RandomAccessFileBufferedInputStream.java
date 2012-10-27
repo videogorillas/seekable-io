@@ -114,4 +114,12 @@ public class RandomAccessFileBufferedInputStream extends SeekableInputStream {
         }
     }
 
+    public void flush() {
+        try {
+            _reset();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

@@ -91,4 +91,9 @@ public class SeekableLimitedInputStream extends SeekableInputStream {
         seeked.set(false);
     }
 
+    @Override
+    public void close() throws IOException {
+        this.in.close();
+    }
+
 }

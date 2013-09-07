@@ -1,11 +1,12 @@
 package com.vg.io;
 
 import static java.util.Arrays.asList;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import org.junit.Assert;
 
 public class ConcatInputStream extends SeekableInputStream {
     private final List<SeekableInputStream> ins;
@@ -47,6 +48,7 @@ public class ConcatInputStream extends SeekableInputStream {
 
     @Override
     public int read() throws IOException {
+        Assert.assertFalse(closed);
         int r = -1;
         while (r < 0 && in != null) {
             r = in.read();
@@ -59,6 +61,7 @@ public class ConcatInputStream extends SeekableInputStream {
 
     @Override
     public int read(byte[] b, int off, int len) throws IOException {
+        Assert.assertFalse(closed);
         if (len == 0)
             return 0;
         int remaining = len;
@@ -75,6 +78,7 @@ public class ConcatInputStream extends SeekableInputStream {
     }
 
     int readTillEOF(byte[] b, int off, int len) throws IOException {
+        Assert.assertFalse(closed);
         int remaining = len;
         int totalRead = 0;
         while (remaining > 0) {
@@ -101,6 +105,7 @@ public class ConcatInputStream extends SeekableInputStream {
 
     @Override
     public long seek(long position) throws IOException {
+        Assert.assertFalse(closed);
         checkIdx(position);
 
         long remaining = position;

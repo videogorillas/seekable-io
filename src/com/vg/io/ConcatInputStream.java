@@ -140,16 +140,20 @@ public class ConcatInputStream extends SeekableInputStream {
         }
     }
 
+    volatile boolean closed = false;
     @Override
     public void close() throws IOException {
-        for (SeekableInputStream in : ins) {
-            try {
-                in.close();
-            } catch (Exception e) {
-                e.printStackTrace();
+        if (!closed){
+            closed = true;
+            for (SeekableInputStream in : ins) {
+                try {
+                    in.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
+            super.close();
         }
-        super.close();
     }
 
     public static int floorIdx(long offsets[], long offset) {

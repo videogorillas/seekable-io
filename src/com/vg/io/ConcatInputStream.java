@@ -1,12 +1,13 @@
 package com.vg.io;
 
-import static java.util.Arrays.asList;
+import junit.framework.Assert;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.Assert;
+import static java.util.Arrays.asList;
 
 public class ConcatInputStream extends SeekableInputStream {
     private final List<SeekableInputStream> ins;
@@ -146,9 +147,10 @@ public class ConcatInputStream extends SeekableInputStream {
     }
 
     volatile boolean closed = false;
+
     @Override
     public void close() throws IOException {
-        if (!closed){
+        if (!closed) {
             closed = true;
             for (SeekableInputStream in : ins) {
                 try {

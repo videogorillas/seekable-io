@@ -29,11 +29,19 @@
 			</plugin>
 		</plugins>
 	</build>
+	<repositories>
+		<repository>
+			<id>DropboxM2</id>
+			<url>file://${user.home}/Dropbox/m2/repository</url>
+		</repository>
+	</repositories>
 	<distributionManagement>
 		<repository>
-			<id>public.videogorillas.com</id>
-			<name>public.videogorillas.com</name>
-			<url>scp://videogorillas.com//var/www/users/videogorillas/m2/public</url>
+			<uniqueVersion>false</uniqueVersion>
+			<id>DropboxM2</id>
+			<name>Corporate Repository</name>
+			<url>file://${user.home}/Dropbox/m2/repository</url>
+			<layout>default</layout>
 		</repository>
 	</distributionManagement>
 	<dependencies>

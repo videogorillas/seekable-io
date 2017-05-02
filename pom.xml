@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>seekable-io</groupId>
 	<artifactId>seekable-io</artifactId>
-	<version>1.0.5</version>
+	<version>1.0.5-SNAPSHOT</version>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<testSourceDirectory>tests</testSourceDirectory>
@@ -35,6 +35,11 @@
 			<url>file://${user.home}/Dropbox/m2/repository</url>
 		</repository>
 	</repositories>
+	<scm>
+		<url>https://github.com/videogorillas/seekable-io</url>
+		<connection>scm:git:https://github.com/videogorillas/seekable-io.git</connection>
+		<developerConnection>scm:git:https://github.com/videogorillas/seekable-io.git</developerConnection>
+	</scm>
 	<distributionManagement>
 		<repository>
 			<uniqueVersion>false</uniqueVersion>

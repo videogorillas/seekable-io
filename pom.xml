@@ -37,27 +37,12 @@
 			</plugin>
 		</plugins>
 	</build>
-	<repositories>
-		<repository>
-			<id>DropboxM2</id>
-			<url>file://${user.home}/Dropbox/m2/repository</url>
-		</repository>
-	</repositories>
 	<scm>
 		<url>https://github.com/videogorillas/seekable-io</url>
 		<connection>scm:git:https://github.com/videogorillas/seekable-io.git</connection>
 		<developerConnection>scm:git:https://github.com/videogorillas/seekable-io.git</developerConnection>
 	  <tag>HEAD</tag>
   </scm>
-	<distributionManagement>
-		<repository>
-			<uniqueVersion>false</uniqueVersion>
-			<id>DropboxM2</id>
-			<name>Corporate Repository</name>
-			<url>file://${user.home}/Dropbox/m2/repository</url>
-			<layout>default</layout>
-		</repository>
-	</distributionManagement>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>

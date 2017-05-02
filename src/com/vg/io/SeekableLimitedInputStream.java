@@ -25,7 +25,6 @@ public class SeekableLimitedInputStream extends SeekableInputStream {
      * @param startOffset
      * @param limit
      *            limit in bytes starting from startOffset
-     * @throws IOException
      */
     public SeekableLimitedInputStream(SeekableInputStream in, long startOffset, long limit) {
         this.in = in;

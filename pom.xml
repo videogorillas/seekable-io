@@ -1,9 +1,8 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>seekable-io</groupId>
 	<artifactId>seekable-io</artifactId>
-	<version>1.0.5-SNAPSHOT</version>
+	<version>1.0.6-SNAPSHOT</version>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<testSourceDirectory>tests</testSourceDirectory>
@@ -27,6 +26,15 @@
 					</dependency>
 				</dependencies>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<configuration>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<localCheckout>true</localCheckout>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 	<repositories>
@@ -39,7 +47,8 @@
 		<url>https://github.com/videogorillas/seekable-io</url>
 		<connection>scm:git:https://github.com/videogorillas/seekable-io.git</connection>
 		<developerConnection>scm:git:https://github.com/videogorillas/seekable-io.git</developerConnection>
-	</scm>
+	  <tag>HEAD</tag>
+  </scm>
 	<distributionManagement>
 		<repository>
 			<uniqueVersion>false</uniqueVersion>
